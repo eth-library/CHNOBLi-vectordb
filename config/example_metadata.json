@@ -1,0 +1,36 @@
+{
+  "collection_name": "my_dummy_collection",
+  "schema": {
+    "collection_name": "my_dummy_collection",
+    "num_shards": 1,
+    "aliases": [
+      "my_dummy_collection",
+      "my_dummy_collection_latest"
+    ],
+    "description": "Embedding collection",
+    "fields": [
+      {
+        "name": "text_id",
+        "type": 21,
+        "params": {
+          "max_length": 36
+        },
+        "is_primary": true
+      },
+      {
+        "name": "embedding",
+        "type": 101,
+        "params": {
+          "dim": 1024
+        }
+      }
+    ]
+  },
+  "index": {
+    "index_type": "IVF_SQ8",
+    "metric_type": "COSINE",
+    "params": {
+      "nlist": 10240
+    }
+  }
+}
