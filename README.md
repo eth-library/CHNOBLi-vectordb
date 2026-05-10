@@ -144,6 +144,7 @@ milvus_dump export -c my_collection -o ./my_dumps --mmap
 ```bash
 milvus_dump import -d ./my_dumps/my_collection_dump -m ./my_dumps/metadata.json # (force replace --drop-existing )
 ```
+To import the data for CHNOBLi, download the data [here](http://hdl.handle.net/20.500.11850/799813), unzip the files, and move the parquet files and the metadata JSON into a single folder `gnd_de_snowflakearctic`. Then use the import functionality.
 
 The import uses the S3 API port from MinIO. If this port is has not been exposed from the container
 one can find its address by running:
