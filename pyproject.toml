@@ -1,6 +1,6 @@
 [project]
 name = "vectordb_operations"
-version = "1.1.0"
+version = "1.2.0"
 description = "Small package that enables milvus operations"
 readme = "README.md"
 authors = [{ name = "Lukas von Ziegler", email = "lukasv@ethz.ch" }]
