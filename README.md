@@ -61,9 +61,9 @@ A `docker-compose.yml` is included to spin up a fully self-contained Milvus envi
 | Service | Description | Port |
 |---------|-------------|------|
 | **etcd** | Metadata store for Milvus | — |
-| **MinIO** | Object storage (S3 API & Console) | 9000 (API), 9001 (console) |
+| **MinIO (Silo)** | S3-compatible object storage (API & Console). Uses [`pgsty/silo`](https://hub.docker.com/r/pgsty/silo) because MinIO Inc. no longer publishes community images on Docker Hub/Quay. | 9000 (API), 9001 (console) |
 | **Milvus** | Vector database (standalone) | 19530 |
-| **Attu** | Web UI for browsing collections | 8000 |
+| **Attu** | Web UI for browsing collections (host **8001**, so embeddings can use **8000**) | 8001 |
 
 ### Start the sandbox
 
@@ -77,7 +77,7 @@ Wait until Milvus is healthy (usually ~30 s):
 docker compose ps          # all services should show "healthy" or "running"
 ```
 
-Open the Attu web UI at **http://localhost:8000** — connect to `milvus:19530` (no credentials needed for the sandbox).
+Open the Attu web UI at **http://localhost:8001** — connect to `milvus:19530` (no credentials needed for the sandbox).
 
 ### Stop and clean up
 
